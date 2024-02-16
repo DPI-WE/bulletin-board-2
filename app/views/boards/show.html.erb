@@ -54,6 +54,7 @@
     <th>Body</th>
     <th>Posted on</th>
     <th>Expires on</th>
+    <th></th>
   </tr>
 
   <% @active_posts.each do |a_post| %>
@@ -62,6 +63,11 @@
       <td><%= a_post.body %></td>
       <td><%= a_post.created_at.strftime("%b %e, %Y") %></td>
       <td><%= a_post.expires_on.strftime("%b %e, %Y") %></td>
+      <td><div>
+        <a href="/delete_post/<%= a_post.id %>">
+          Delete post
+        </a>
+      </div></td>
     </tr>
   <% end %>
 </table>
